@@ -444,7 +444,7 @@ var MUIPlacesAutocomplete = function (_React$Component) {
         {
           placement: 'top-start',
           modifiers: { inner: { enabled: true } },
-          style: { left: 0, right: 0, zIndex: 1 }
+          style: { left: 0, right: 0, zIndex: 15 }
         },
         function (_ref) {
           var popperProps = _ref.popperProps,

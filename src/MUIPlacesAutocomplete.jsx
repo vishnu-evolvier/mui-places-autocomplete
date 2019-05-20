@@ -67,7 +67,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
       <Popper
         placement="top-start"
         modifiers={({ inner: { enabled: true } })}
-        style={{ left: 0, right: 0, zIndex: 1 }}
+        style={{ left: 0, right: 0, zIndex: 15 }}
       >
         {({ popperProps, restProps }) => (
           <div
@@ -188,7 +188,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
     // the old suggestions.
 
     const { createAutocompleteRequest } = this.props
-    
+
     if (inputValue === '') {
       createAutocompleteRequest(inputValue);
       this.setState({ suggestions: [] })
