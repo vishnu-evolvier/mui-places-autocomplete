@@ -687,7 +687,7 @@ var MUIPlacesAutocomplete = function (_React$Component) {
         onSelect: this.onSuggestionSelected,
         onInputValueChange: this.onInputValueChange,
         itemToString: function itemToString(suggestion) {
-          return suggestion ? data.structured_formatting.main_text : '';
+          return suggestion ? suggestion.structured_formatting.main_text : '';
         },
         render: this.renderAutocomplete
       }, controlProps));

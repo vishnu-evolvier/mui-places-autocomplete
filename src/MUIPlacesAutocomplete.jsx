@@ -270,7 +270,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
       <Downshift
         onSelect={this.onSuggestionSelected}
         onInputValueChange={this.onInputValueChange}
-        itemToString={suggestion => (suggestion ? data.structured_formatting.main_text : '')}
+        itemToString={suggestion => (suggestion ? suggestion.structured_formatting.main_text : '')}
         render={this.renderAutocomplete}
         {...controlProps}
       />
