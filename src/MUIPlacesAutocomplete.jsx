@@ -187,6 +187,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
     // string when we perform a search. Set our suggestions to empty here as well so we don't render
     // the old suggestions.
     if (inputValue === '') {
+      createAutocompleteRequest(inputValue);
       this.setState({ suggestions: [] })
       return
     }
@@ -263,12 +264,11 @@ export default class MUIPlacesAutocomplete extends React.Component {
     const controlProps = this.props.textFieldProps && this.props.textFieldProps.value ?
       { inputValue: this.props.textFieldProps.value } :
       { }
-
     return (
       <Downshift
         onSelect={this.onSuggestionSelected}
         onInputValueChange={this.onInputValueChange}
-        itemToString={suggestion => (suggestion ? suggestion.description : '')}
+        itemToString={suggestion => (suggestion ? data.structured_formatting.main_text : '')}
         render={this.renderAutocomplete}
         {...controlProps}
       />
