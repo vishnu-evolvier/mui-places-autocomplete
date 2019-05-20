@@ -186,13 +186,15 @@ export default class MUIPlacesAutocomplete extends React.Component {
     // If the inputs value is empty we can return as we will get an error if we provide the empty
     // string when we perform a search. Set our suggestions to empty here as well so we don't render
     // the old suggestions.
+
+    const { createAutocompleteRequest } = this.props
+    
     if (inputValue === '') {
       createAutocompleteRequest(inputValue);
       this.setState({ suggestions: [] })
       return
     }
 
-    const { createAutocompleteRequest } = this.props
 
     this.autocompleteService.getPlacePredictions(
       createAutocompleteRequest(inputValue),
